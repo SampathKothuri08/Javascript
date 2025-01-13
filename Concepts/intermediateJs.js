@@ -103,6 +103,7 @@ console.log(person.Address) // undefined- it was deleted
 
 const keys_in_person = Object.keys(person)
 
+console.log(typeof keys_in_person)
 console.log(keys_in_person)
 
 const val = Object.values(person)
@@ -111,3 +112,8 @@ console.log(val)
 console.log(Object.entries(person))
 
 
+module.exports = {
+    club,
+    colors,
+    person
+}
