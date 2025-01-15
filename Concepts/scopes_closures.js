@@ -54,6 +54,10 @@ function outer(){
 
 
 // closures
+// a closure is a function that remembers the variables from its lexical scope,
+//  even when the function is executed outside that scope.
+
+
 
 greet()
 function greet(){

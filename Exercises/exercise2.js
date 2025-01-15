@@ -32,7 +32,7 @@ function findOldestFunction(names_and_ages){
     let oldest_person = names_and_ages[0]
 
     for(let i=1;i<names_and_ages.length;i++){
-        if(oldest_person !=null && names_and_ages[i].age > oldest_person.age){
+        if(names_and_ages[i].age > oldest_person.age){
             oldest_person = names_and_ages[i]
         }
     }

@@ -25,7 +25,7 @@ console.log(fullname)
 console.log("log"-10) // NaN(not a number)
 
 //String concatenation
-console.log('7' + 3) // The string coerces the numeric value into a string tuype and add them togetheras if they are strings
+console.log('7' + 3) // The string coerces the numeric value into a string type and add them together as if they are strings
 
 console.log('5'- 2) // 3
 
@@ -72,6 +72,10 @@ console.log(colors.slice(0,2))
 
 colors = colors.slice(0,2).concat(colors.slice(3))
 console.log(colors)
+
+console.log(typeof all_the_colors)
+console.log(typeof colors)
+
 
 
 // Modifying objects
