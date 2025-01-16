@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Practice</title>
+
+</head>
+
+<body>
+
+    <h1 id="main-title">DOM Manipulation</h1>
+
+    <form id="form-example" onsubmit="return submitDetails(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <button id="open-modal-btn">Open Modal</button>
+
+    <div id="content-area"></div>
+
+    <textarea id="text-area" rows="4" cols="50">Type some text...</textarea>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+            <button id="close-modal-btn">Close Modal</button>
+        </div>
+    </div>
+
+    <script>
+        
+     let open_btn = document.getElementById("open-modal-btn")
+     let close_btn = document.getElementById("close-modal-btn")
+     let modal = document.querySelector(".modal")
+     let text_area = document.getElementById("text-area")
+     let nameInput = document.getElementById("name")
+     let ageInput = document.getElementById("age")
+     let xbtn = document.querySelector(".close")
+     let content_area = document.getElementById("content-area")
+
+     open_btn.addEventListener("click", function(){
+        console.log(text_area.value)
+        modal.style.display = 'flex'
+        text_area.value = 'Tell me about yourself'
+
+     })
+
+     
+
+    close_btn.addEventListener("click", handleCloseModal)
+    xbtn.addEventListener("click",handleCloseModal)
+
+    function handleCloseModal(){
+        modal.style.display = 'none'
+        text_area.value = 'Type some text...'
+    }
+
+
+    function submitDetails(event){
+        event.preventDefault()
+        console.log("name :",nameInput.value)
+        console.log("age :",ageInput.value)
+    }
+
+    content_area.innerHTML = '<h1> Hello! </h1>'
+
+    let newpar = document.createElement('p')
+
+    newpar.innerText = "how's it going ?"
+    
+    content_area.appendChild(newpar)
+    newpar.style.fontWeight  = 'bold'
+    newpar.style.background = 'yellow'
+
+    let newHtml = document.querySelector('#content-area h1')
+    newHtml.style.background = 'orange'
+    newHtml.style.color = 'Gray'
+    
+    
+
+    </script>
+
+</body>
+
+</html>
