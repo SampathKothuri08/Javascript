@@ -70,6 +70,11 @@ pelement.innerText = new Date()
 
 document.getElementById('removeListener').removeEventListener('click', myFunction)
 
+// To remove an event listener, the function used in removeEventListener 
+// must be the same reference as the one passed to addEventListener
+
+// Anonymous functions won't work becasues they lack a reference
+
 // 10. Manipulating Attributes and Properties: Write JavaScript code to change the src attribute of an <img> element and explain the difference between attributes and properties in the context of DOM elements.
 
 document.querySelector('img').setAttribute('src', 'new-img.png')
