@@ -65,109 +65,109 @@ greet(goodbye)
 
 //Promises
 
-function wakeup(){
-    return new Promise((resolve)=>{
-        console.log("Wake up at 6'o clock")
-        resolve()
-    })
-}
+// function wakeup(){
+//     return new Promise((resolve)=>{
+//         console.log("Wake up at 6'o clock")
+//         resolve()
+//     })
+// }
 
-function takeABath(){
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            console.log("Take a bath")
-            resolve()
-        },1000)
-    })
-}
+// function takeABath(){
+//     return new Promise((resolve)=>{
+//         setTimeout(()=>{
+//             console.log("Take a bath")
+//             resolve()
+//         },1000)
+//     })
+// }
 
-function haveBreakfast(){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            let milk = prompt("Do you have milk ?")
-            if(milk){
-                console.log("Have Breakfast")
-                resolve()
-            }
-            else{
-                reject("Ran out of milk")
-            }
-        },1000)
-    })
-}
-
-
-function setOffForUni(){ 
-    return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            let flunk = prompt("Are you going to the University? ")
-            if(flunk){
-                console.log("Set off for the University")
-                resolve()
-            }
-            else{
-                reject("I'm not going to the University today")
-            }
-        },2000)
-    })
-}
+// function haveBreakfast(){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             let milk = prompt("Do you have milk ?")
+//             if(milk){
+//                 console.log("Have Breakfast")
+//                 resolve()
+//             }
+//             else{
+//                 reject("Ran out of milk")
+//             }
+//         },1000)
+//     })
+// }
 
 
-function getOnTheBus(){
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            console.log("Get on the bus")
-            resolve()
-        },2000)
-    })
-}
+// function setOffForUni(){ 
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             let flunk = prompt("Are you going to the University? ")
+//             if(flunk){
+//                 console.log("Set off for the University")
+//                 resolve()
+//             }
+//             else{
+//                 reject("I'm not going to the University today")
+//             }
+//         },2000)
+//     })
+// }
 
-function getOffTheBus(){
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            console.log("Get off the bus")
-            resolve()
-        },1000)
-    })
-}
 
-function walkToTheuni(){
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            console.log("Walk to the University from the bus stop")
-            resolve()
-        },2000)
-    })
-}
-function dayroutine(){
-    wakeup()
-    .then(()=>{
-        return takeABath()
-    })
-    .then(()=>{
-        return haveBreakfast().catch(function(message){   // local catch - It doesn't break the .then() chain if there's an error
-            console.log(message)
-            return "skipped breakfast"   
-        })
-    }).
-    then(()=>{
-        return setOffForUni()
-    })
-    .then(()=>{
-        return getOnTheBus()
-    })
-    .then(()=>{
-        return getOffTheBus()
-    })
-    .then(()=>{
-        return walkToTheuni()
-    })
-    .catch(function(message){
-        console.log(message)
-    })
-}
+// function getOnTheBus(){
+//     return new Promise((resolve)=>{
+//         setTimeout(()=>{
+//             console.log("Get on the bus")
+//             resolve()
+//         },2000)
+//     })
+// }
 
-dayroutine()   // Calling dayroutine:
+// function getOffTheBus(){
+//     return new Promise((resolve)=>{
+//         setTimeout(()=>{
+//             console.log("Get off the bus")
+//             resolve()
+//         },1000)
+//     })
+// }
+
+// function walkToTheuni(){
+//     return new Promise((resolve)=>{
+//         setTimeout(()=>{
+//             console.log("Walk to the University from the bus stop")
+//             resolve()
+//         },2000)
+//     })
+// }
+// function dayroutine(){
+//     wakeup()
+//     .then(()=>{
+//         return takeABath()
+//     })
+//     .then(()=>{
+//         return haveBreakfast().catch(function(message){   // local catch - It doesn't break the .then() chain if there's an error
+//             console.log(message)
+//             return "skipped breakfast"   
+//         })
+//     }).
+//     then(()=>{
+//         return setOffForUni()
+//     })
+//     .then(()=>{
+//         return getOnTheBus()
+//     })
+//     .then(()=>{
+//         return getOffTheBus()
+//     })
+//     .then(()=>{
+//         return walkToTheuni()
+//     })
+//     .catch(function(message){
+//         console.log(message)
+//     })
+// }
+
+// dayroutine()   // Calling dayroutine:
 
 
 // Triggers the wakeup function.
@@ -192,3 +192,18 @@ dayroutine()   // Calling dayroutine:
 // However, if a local .catch() handles an error, the chain resumes as normal.
 
 
+//async and await
+
+async function fetchData(){
+    try{
+        const res = await fetch('https://dummyjson.com/products/1')
+        const data = await res.json()
+        console.log(data)
+        console.log(data.id)
+    }
+    catch(e){
+        console.log(e)
+    }
+}
+
+fetchData()
