@@ -1,5 +1,4 @@
 // arrow functions
-
 const greet = ()=>{
     return "Hello"
 }
@@ -58,6 +57,8 @@ let [value1, , value3] = arr
 console.log(value1, value3)
 
 
+// template literal strings
+
 const name = 'jay pritchett'
 
 const show = 'Modern family'
@@ -99,6 +100,8 @@ num2 = [...num1,60,70,80,90]
 console.log(num2)
 
 
+
+//Array methods
 
 //foreach loop
 
